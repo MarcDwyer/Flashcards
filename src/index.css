@@ -12,3 +12,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.carder {
+  margin-top: 25px;
+  border: solid 1px #C9C9C9;
+  border-radius: 5px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.cardtitle {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.carder .btn-success {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.navigator {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.navigator * {  
+  cursor: pointer;
+}
