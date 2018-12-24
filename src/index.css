@@ -47,3 +47,8 @@ code {
 .navigator * {  
   cursor: pointer;
 }
+@media (max-width: 600px) {
+  .carder {
+    height: 475px;
+  }
+}

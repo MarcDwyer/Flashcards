@@ -112,50 +112,31 @@ export const data = [{
   },
   {
     question: 'What is the difference between call stack and task queue?',
-    answer: ''
+    answer: 'A call stack is a stack data structure that stores information about the active subroutines of a computer program. A job queue (sometimes batch queue), is a data structure maintained by job scheduler software containing jobs to run.'
   },
   {
     question: 'What are the differences between variables created using let, var or const?',
-    answer: ''
-  },
-  {
-    question: 'What are the differences between ES6 class and ES5 function constructors?',
-    answer: ''
-  },
-  {
-    question: 'Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?',
-    answer: ''
-  },
-  {
-    question: 'What advantage is there for using the arrow syntax for a method in a constructor?',
-    answer: ''
+    answer: 'const cannot be reassigned, while let can. `var` is now the weakest signal available when you define a variable in JavaScript. The variable may or may not be reassigned'
   },
   {
     question: 'What is the definition of a higher-order function?',
-    answer: ''
+    answer: 'takes one or more functions as arguments (i.e. procedural parameters), and returns a function as a result'
   },
-  {
-    question: 'Can you give an example for destructuring an object or an array?',
-    answer: ''
-  },
+
   {
     question: 'ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?',
-    answer: ''
-  },
-  {
-    question: 'Can you give an example of a curry function and why this syntax offers an advantage?',
-    answer: ''
+    answer: 'const str = `/${yes}`'
   },
   {
     question: 'What are the benefits of using spread syntax and how is it different from rest syntax?',
-    answer: ''
+    answer: 'Its like, way easier and stuff'
   },
   {
     question: 'How can you share code between files?',
-    answer: ''
+    answer: 'Using a module system like CommonJS or Harmony'
   },
   {
     question: 'Why you might want to create static class members?',
-    answer: ''
+    answer: 'The static keyword defines a static method for a class. Static methods arent called on instances of the class. Instead, theyre called on the class itself. These are often utility functions, such as functions to create or clone objects.'
   }
 ]
