@@ -12,7 +12,8 @@ class Flashcard extends Component {
         }
     }
     componentDidMount() {
-        if (this.props.match.params.id > data.length || !data[parseInt(this.props.match.params.id)]) {
+        console.log(`Total questions: ${data.length}`)
+        if (this.props.match.params.id > data.length) {
             this.setState({index: 0}, () => {
                 this.props.history.push("/1")
             })
@@ -24,6 +25,7 @@ class Flashcard extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         const id = parseInt(this.props.match.params.id)
+        const { index } = this.state
       if (prevState.index !== this.state.index) {
             this.props.history.push(`/${this.state.index + 1}`)
         } else if (id - 1 !== this.state.index && prevState.index) {
@@ -47,16 +49,27 @@ class Flashcard extends Component {
             <div className="carder">
             <h5>{`Question #${index + 1}`}</h5>
                 <div className="content">
-                    <span className="cardtitle">{question.question}</span>
+                    <span className="cardtitle ml-2 mr-2">{question.question}</span>
                     {isClicked ? <span className="ml-2 mr-2">{question.answer}</span> : ''}
                 </div>
                 <button type="button" className="btn btn-success" onClick={() => this.setState({ isClicked: !isClicked })}>{isClicked ? 'Hide answer' : 'Show answer'}</button>
                 <div className="navigator">
                     <button className="btn ml-2" onClick={() => {
-                        if (index === 0) return
+                        if (!data[index - 1]) {
+                            this.setState({ index: data.length - 1, isClicked: false}, () => {
+                              this.props.history.push(`/${data.length}`)  
+                            })
+                            return
+                        }
                         this.setState({ index: index - 1 , isClicked: false})
                     }}>Back</button>
                     <button className="btn ml-4" onClick={() => {
+                        if (!data[this.state.index + 1]) {
+                            this.setState({ index: 0, isClicked: false }, () => {
+                                this.props.history.push(`/${this.state.index + 1}`)
+                            })
+                            return
+                        }
                         this.setState({ index: index + 1, isClicked: false })
                     }}>Next</button>
                 </div>
