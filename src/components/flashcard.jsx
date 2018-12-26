@@ -13,15 +13,26 @@ class Flashcard extends Component {
     }
     componentDidMount() {
         console.log(`Total questions: ${data.length}`)
-        if (this.props.match.params.id > data.length) {
-            this.setState({index: 0}, () => {
-                this.props.history.push("/1")
-            })
-            return
-        }
-        if (this.props.match.params.id) {
-            this.setState({index: parseInt(this.props.match.params.id) - 1})
-        }
+       const id = this.props.match.params.id ? parseInt(this.props.match.params.id) : null
+       
+         if (this.props.match.params.id) {
+            if (id === 0) {
+               this.setState({index: id}, () => {
+                   this.props.history.push("/1")
+               })
+               return
+           } else if (!data[id]) {
+               console.log('please stop trying to break my spaghetti code')
+               this.setState({index: 0}, () => {
+                   this.props.history.push("/1")
+               })
+               return
+           } else if (data[id]) {
+               this.setState({index: id - 1})
+           }
+       } else {
+        this.props.history.push('/1')
+       }
     }
     componentDidUpdate(prevProps, prevState) {
         const id = parseInt(this.props.match.params.id)

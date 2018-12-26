@@ -129,7 +129,7 @@ export const data = [{
   },
   {
     question: 'What are the benefits of using spread syntax and how is it different from rest syntax?',
-    answer: 'Its like, way easier and stuff'
+    answer: 'When used in function arguments of a function declaration/expression it will convert the remaining arguments into an array. This variant is called the Rest parameters syntax.'
   },
   {
     question: 'How can you share code between files?',
